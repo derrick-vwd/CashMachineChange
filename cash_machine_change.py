@@ -7,22 +7,26 @@ customer_payment = float(input('Payment: '))
 change = customer_payment - total_cost
 # Assumes that the customer will pay the entire sum.
 
-cents = change % 1
-dollars = change - cents
+if change > 0:
 
-quarters = cents // .25
-cents = round(cents % .25, 2)
+	cents = change % 1
+	dollars = change - cents
 
-dimes = cents // 0.10
-cents = round(cents % .10, 2)
+	quarters = cents // .25
+	cents = round(cents % .25, 2)
 
-nickels = cents // .05
-cents = round(cents % .05, 2)
+	dimes = cents // 0.10
+	cents = round(cents % .10, 2)
 
-pennies = cents // 0.01
+	nickels = cents // .05
+	cents = round(cents % .05, 2)
 
-print('Dollars: ' + str(int(dollars)))
-print('Quarters: ' + str(int(quarters)))
-print('Dimes: ' + str(int(dimes)))
-print('Nickels: ' + str(int(nickels)))
-print('Pennies: ' + str(int(pennies)))
+	pennies = cents // 0.01
+
+	print('Dollars: ' + str(int(dollars)))
+	print('Quarters: ' + str(int(quarters)))
+	print('Dimes: ' + str(int(dimes)))
+	print('Nickels: ' + str(int(nickels)))
+	print('Pennies: ' + str(int(pennies)))
+else:
+	print('You didn\'t provide enough money.')
